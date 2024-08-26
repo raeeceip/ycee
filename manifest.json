@@ -1,0 +1,35 @@
+{
+    "manifest_version": 2,
+    "name": "Job Application Assistant",
+    "version": "1.0",
+    "description": "Automatically generates introduction based on job details and resume",
+    "permissions": [
+        "activeTab",
+        "storage",
+        "https://*/*"
+    ],
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icon16.png",
+            "48": "icon48.png",
+            "128": "icon128.png"
+        }
+    },
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
